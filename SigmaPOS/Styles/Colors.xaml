@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SigmaPOS.Styles.Colors">
+    <Color x:Key="PrimaryColor">#083B51</Color>
+    <Color x:Key="SecondaryColor">#009ADC</Color>
+    <Color x:Key="TertiaryColor">#E9F1F4</Color>
+    <Color x:Key="TertiarySigColor">#7B7B7B</Color>
+</ResourceDictionary>
