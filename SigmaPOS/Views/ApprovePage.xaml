@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SigmaPOS.Views.ApprovePage"
+             NavigationPage.HasBackButton="False"
+             Title="          Request Status">
+
+
+    <Frame BackgroundColor="#E9F1F4" Margin="20,150,20,250" HeightRequest="110" CornerRadius="10" Padding="0">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" Margin="0,40">
+                <StackLayout>
+                    <Image Source="Successmark.png" WidthRequest="50" HeightRequest="50"/>
+                </StackLayout>
+                <Label Text="Transaction Approved" HorizontalTextAlignment="Center" FontFamily="Euclid-Medium"
+                       FontSize="16" TextColor="{StaticResource PrimaryColor}" Margin="0,5"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Margin="20">
+                <Button Text="ok" Clicked="click_me" BackgroundColor="{StaticResource PrimaryColor}" FontFamily="Euclid-Medium" FontSize="15" TextColor="White" CornerRadius="10"/>
+
+                <Label HorizontalOptions="CenterAndExpand"  FontSize="16" FontFamily="Euclid-Medium" Grid.Row="2" Margin="0,15">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Download Receipt " TextColor="Black" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </Grid>
+    </Frame>
+</ContentPage>

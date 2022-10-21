@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SigmaPOS.Views.ConnectPage"
+             Title="                 Connect">
+
+
+    <Frame BackgroundColor="#E9F1F4" Margin="20,150,20,250" HeightRequest="110" CornerRadius="10" Padding="0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Frame BackgroundColor="White" Grid.Row="0" Margin="100,40,100,30" Padding="0" HeightRequest="110" CornerRadius="10">
+                <StackLayout>
+                    <Image Source="Bluetooth.png" WidthRequest="30" HeightRequest="30" VerticalOptions="Center" Margin="0,40,0,0"/>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout Grid.Row="1">
+
+                <Label Text="Paired Successfully" FontFamily="Euclid-Light" FontSize="16" HorizontalTextAlignment="Center" 
+                       TextColor="{StaticResource PrimaryColor}" Margin="0,10"/>
+
+                <FlexLayout Margin="20" JustifyContent="SpaceBetween">
+                    <Frame BackgroundColor="#7B7B7B" Padding="0" WidthRequest="120" HeightRequest="50" CornerRadius="10">
+                        <Label Text="Cancel" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Euclid-Light" FontSize="15"/>
+                    </Frame>
+                    <Frame BackgroundColor="#083B51" Padding="0" WidthRequest="170" HeightRequest="50" CornerRadius="10">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Tap_me"/>
+                        </Frame.GestureRecognizers>
+                        <Label Text="Confirm Payment" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Euclid-Light" FontSize="15"/>
+                    </Frame>
+                </FlexLayout>
+            </StackLayout>
+        </Grid>
+    </Frame>
+</ContentPage>

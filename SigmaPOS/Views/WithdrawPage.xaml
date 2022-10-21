@@ -78,6 +78,9 @@
         </StackLayout>
 
         <Frame BackgroundColor="{StaticResource PrimaryColor}" Grid.Row="3" HeightRequest="50" Padding="0" CornerRadius="10" Margin="0,40">
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="proceed"/>
+            </Frame.GestureRecognizers>
             <Label Text="Continue" HorizontalTextAlignment="Center" TextColor="White" FontFamily="Euclid-Medium" FontSize="15" VerticalTextAlignment="Center"/>
         </Frame>
     </Grid>

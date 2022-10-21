@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SigmaPOS.Views.WalletPage">
 
+    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -31,6 +33,177 @@
             </Grid>
         </Frame>
 
-        
+        <FlexLayout Grid.Row="1" Direction="Column" Margin="20,10">
+            <StackLayout>
+                <Frame CornerRadius="0" Margin="0,0,0,-5" Padding="15">
+                    <FlexLayout Direction="Column">
+                        <StackLayout Orientation="Horizontal" Spacing="60">
+                            <Label Text="18/09/2022 - 18/10/2022" TextColor="Black"  FontFamily="Euclid-Medium" FontSize="12" Margin="0,5,0,0"/>
+                            <Frame Padding="5,-5" HeightRequest="40" WidthRequest="100" CornerRadius="5" BackgroundColor="#F5F5F5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="7*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Picker TextColor="{StaticResource PrimaryColor}" Grid.Column="0" FontSize="Small" Title="All Status" >
+                                        <Picker.Items>
+                                            <x:String>All Status</x:String>
+                                            <x:String>Withdrawal</x:String>
+                                            <x:String>Credit</x:String>
+                                        </Picker.Items>
+                                    </Picker>
+                                    <Image Source="downarrows.png" WidthRequest="15" HeightRequest="15" Grid.Column="1"/>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Spacing="50" Margin="0,15,0,0">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Credit:" TextColor="{StaticResource PrimaryColor}"  FontFamily="Euclid-Medium" FontSize="13"/>
+                                <Label Text="₦ 150 000.00" TextColor="#7B7B7B" FontFamily="Euclid-Medium" FontSize="12"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Debit:" TextColor="#FF6B00" FontFamily="Euclid-Medium" FontSize="13"/>
+                                <Label Text="₦ 50 000.00" TextColor="#7B7B7B" FontFamily="Euclid-Medium" FontSize="12"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </FlexLayout>
+                </Frame>
+
+                <Line X1="0"
+                      Y1="0"
+                      X2="400"
+                      Y2="0"
+                      Margin="0,0"
+                      Grid.Row="1"
+                      Stroke="gray"
+                      StrokeDashArray="0,0"
+                      StrokeDashOffset="2"/>
+
+                <Frame CornerRadius="0" HeightRequest="70" Margin="0,-5" Padding="15">
+
+                    <StackLayout>
+                        <FlexLayout JustifyContent="SpaceBetween">
+                            <Label Text="Withdrawal" TextColor="#ff6b00" FontFamily="Euclid-Medium" FontSize="13"/>
+                            <Label Text="7,000" TextColor="#ff6b00" FontFamily="Euclid-Medium" FontSize="13"/>
+                        </FlexLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Emmanuel Ola |" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="MASTERCARD -" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="53********790" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Monday," FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="20 October 2022" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="09:20:05" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Line X1="0"
+                      Y1="0"
+                      X2="400"
+                      Y2="0"
+                      Margin="20,0"
+                      Grid.Row="1"
+                      Stroke="gray"
+                      StrokeDashArray="0,0"
+                      StrokeDashOffset="2"/>
+
+                <Frame CornerRadius="0" HeightRequest="70" Margin="0,-5" Padding="15">
+
+                    <StackLayout>
+                        <FlexLayout JustifyContent="SpaceBetween">
+                            <Label Text="Credit" TextColor="#000000" FontFamily="Euclid-Medium" FontSize="13"/>
+                            <Label Text="9,000" TextColor="#000000" FontFamily="Euclid-Medium" FontSize="13"/>
+                        </FlexLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Pelumi Adedayo |" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="Wallet -" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="000045673" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Monday," FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="20 October 2022" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="09:20:05" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Line X1="0"
+                      Y1="0"
+                      X2="400"
+                      Y2="0"
+                      Margin="20,0"
+                      Grid.Row="1"
+                      Stroke="gray"
+                      StrokeDashArray="0,0"
+                      StrokeDashOffset="2"/>
+
+                <Frame CornerRadius="0" HeightRequest="70" Margin="0,-5" Padding="15">
+
+                    <StackLayout>
+                        <FlexLayout JustifyContent="SpaceBetween">
+                            <Label Text="Withdrawal" TextColor="#ff6b00" FontFamily="Euclid-Medium" FontSize="13"/>
+                            <Label Text="7,000" TextColor="#ff6b00" FontFamily="Euclid-Medium" FontSize="13"/>
+                        </FlexLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Emmanuel Ola |" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="MASTERCARD -" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="53********790" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Monday," FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="20 October 2022" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="09:20:05" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Line X1="0"
+                      Y1="0"
+                      X2="400"
+                      Y2="0"
+                      Margin="20,0"
+                      Grid.Row="1"
+                      Stroke="gray"
+                      StrokeDashArray="0,0"
+                      StrokeDashOffset="2"/>
+
+                <Frame CornerRadius="0" HeightRequest="70" Margin="0,-5" Padding="15">
+
+                    <StackLayout>
+                        <FlexLayout JustifyContent="SpaceBetween">
+                            <Label Text="Credit" TextColor="#000000" FontFamily="Euclid-Medium" FontSize="13"/>
+                            <Label Text="9,000" TextColor="#000000" FontFamily="Euclid-Medium" FontSize="13"/>
+                        </FlexLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Pelumi Adedayo |" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="Wallet -" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="000045673" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Monday," FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="20 October 2022" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                            <Label Text="09:20:05" FontFamily="Euclid-Medium" FontSize="13" TextColor="Black"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Line X1="0"
+                      Y1="0"
+                      X2="400"
+                      Y2="0"
+                      Margin="20,0"
+                      Grid.Row="1"
+                      Stroke="gray"
+                      StrokeDashArray="0,0"
+                      StrokeDashOffset="2"/>
+            </StackLayout>
+        </FlexLayout>
     </Grid>
 </ContentPage>

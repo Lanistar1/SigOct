@@ -19,7 +19,8 @@ namespace SigmaPOS.Views
 
         private void click(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Tabbed());
+            //Navigation.PushAsync(new Tabbed());
+            Navigation.PushModalAsync(new NavigationPage(new Tabbed()));
         }
     }
 }

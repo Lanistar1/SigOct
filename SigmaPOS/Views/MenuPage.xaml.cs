@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace SigmaPOS.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WithdrawPage : ContentPage
+    public partial class MenuPage : Shell
     {
-        public WithdrawPage()
+        public MenuPage()
         {
             InitializeComponent();
-        }
-
-        private void proceed(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new BluetoothConnectPage());
         }
     }
 }
