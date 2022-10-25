@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SigmaPOS.Views.TerminalPage"
+             Title="Terminal Information">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/> 
+            <RowDefinition Height="*"/> 
+        </Grid.RowDefinitions>
+
+        <Frame Grid.Row="0" BackgroundColor="#FFE7D6" HeightRequest="60" Padding="0" Margin="0,0">
+
+            <FlexLayout Margin="10,0">
+                <StackLayout>
+                    <Image Source="Terminal.png" WidthRequest="20" HeightRequest="20" Margin="0,20,20,0"/>
+                </StackLayout>
+                <Label Text="Your terminal details" FontFamily="Euclid-Medium" FontSize="15" TextColor="#083B51" VerticalTextAlignment="Center"/>
+            </FlexLayout>
+        </Frame>
+
+        <StackLayout Grid.Row="1" Margin="0,10">
+            <StackLayout Margin="0,10">
+                <Label Text="Serial Number" FontFamily="Euclid-Medium" FontSize="14" TextColor="#7B7B7B"/>
+                <Label Text="0045764346" FontFamily="Euclid-Medium" FontSize="14" TextColor="#263238"/>
+            </StackLayout>
+            <StackLayout Margin="0,10">
+                <Label Text="Device type" FontFamily="Euclid-Medium" FontSize="14" TextColor="#7B7B7B"/>
+                <Label Text="0045764346" FontFamily="Euclid-Medium" FontSize="14" TextColor="#263238"/>
+            </StackLayout>
+            <StackLayout Margin="0,10">
+                <Label Text="Device status" FontFamily="Euclid-Medium" FontSize="14" TextColor="#7B7B7B"/>
+                <Label Text="Connect" FontFamily="Euclid-Medium" FontSize="14" TextColor="#263238"/>
+            </StackLayout>
+            <StackLayout Margin="0,10">
+                <Label Text="Device MAC ID" FontFamily="Euclid-Medium" FontSize="14" TextColor="#7B7B7B"/>
+                <Label Text="165342" FontFamily="Euclid-Medium" FontSize="14" TextColor="#263238"/>
+            </StackLayout>
+            <StackLayout Margin="0,10">
+                <Label Text="Device version number" FontFamily="Euclid-Medium" FontSize="14" TextColor="#7B7B7B"/>
+                <Label Text="764239867" FontFamily="Euclid-Medium" FontSize="14" TextColor="#263238"/>
+            </StackLayout>
+            <StackLayout Margin="0,10">
+                <Label Text="Device working keys" FontFamily="Euclid-Medium" FontSize="14" TextColor="#7B7B7B"/>
+                <Label Text="764" FontFamily="Euclid-Medium" FontSize="14" TextColor="#263238"/>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

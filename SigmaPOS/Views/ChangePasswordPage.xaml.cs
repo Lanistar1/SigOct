@@ -21,6 +21,7 @@ namespace SigmaPOS.Views
         {
             //Navigation.PushAsync(new Tabbed());
             Navigation.PushModalAsync(new NavigationPage(new Tabbed()));
+            //Navigation.PushModalAsync(new Tabbed());
         }
     }
 }

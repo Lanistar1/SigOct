@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace SigmaPOS.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class More : ContentPage
+    public partial class TransactionDetailsPage : ContentPage
     {
-        public More()
+        public TransactionDetailsPage()
         {
             InitializeComponent();
-        }
-
-        private void To_details(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new TerminalPage());
         }
     }
 }

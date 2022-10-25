@@ -11,17 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace SigmaPOS.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WalletPage : ContentPage
+    public partial class MetricPage : ContentPage
     {
-        public WalletPage()
+        public MetricPage()
         {
             InitializeComponent();
             BindingContext = new DashBoardViewModel(Navigation);
-        }
-
-        private void proceed(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new TransactionDetailsPage());
         }
     }
 }

@@ -1,23 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SigmaPOS.Views.WalletPage">
-
-    
-
+             x:Class="SigmaPOS.Views.WalletPage"
+             NavigationPage.HasNavigationBar="False">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Frame Margin="15" BackgroundColor="{StaticResource PrimaryColor}" CornerRadius="10" Grid.Row="0" HeightRequest="120" Padding="0">
+        <Frame Grid.Row="0" Padding="0" HeightRequest="60" HasShadow="False" Margin="0,0,0,-5">
+            <Label Text="Transaction History" FontFamily="Euclid-Medium" FontSize="18" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="#083B51"/>
+        </Frame>
+
+        <Frame Margin="15" BackgroundColor="{StaticResource PrimaryColor}" CornerRadius="10" Grid.Row="1" HeightRequest="120" Padding="0">
             <Grid>
                 <StackLayout>
                     <Image Source="Intersecter.png" HeightRequest="120" WidthRequest="150" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" Margin="0,-12,-5,0"/>
                 </StackLayout>
 
-                <FlexLayout JustifyContent="SpaceBetween" Margin="20,30">
+                <StackLayout Orientation="Horizontal" Spacing="90"  Margin="20,20">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Wallet balance" TextColor="White" FontFamily="Euclid-Medium" FontSize="14" Margin="0,0,0,10"/>
+                            <!--<Image Source="Eyess.png" WidthRequest="20" HeightRequest="20" Margin="10,0,0,5"/>-->
+
+                            <Grid>
+                                <ImageButton Source="Eyess.png" BackgroundColor="Transparent" WidthRequest="20" HeightRequest="20" Margin="0,0,0,5" IsVisible="{Binding ButtonShow}" Command="{Binding ButtonShowCommand}" CommandParameter="{Binding .}"/>
+                                <ImageButton Source="eyewhite.png" BackgroundColor="Transparent" WidthRequest="20" HeightRequest="20" Margin="0,0,0,0" IsVisible="{Binding ButtonHide}" Command="{Binding ButtonHideCommand}" CommandParameter="{Binding .}"/>
+                            </Grid>
+                        </StackLayout>
+                        <Grid>
+                            <Label Text="₦ 250 000. 00" TextColor="White" FontFamily="Euclid-Medium" FontSize="20" IsVisible="{Binding ShowAmount}"/>
+                            <Label Text="- - - - - - - -" TextColor="White" FontSize="Medium" FontAttributes="Bold" IsVisible="{Binding HideAmount}"/>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout Margin="0,5,0,0" HorizontalOptions="EndAndExpand">
+                        <Label Text="Wallet ID" TextColor="White" FontFamily="Euclid-Medium" FontSize="15" HorizontalTextAlignment="End" />
+                        <Label Text="0089657328" TextColor="White" FontFamily="Euclid-Medium" FontSize="15" />
+                    </StackLayout>
+                </StackLayout>
+
+                <!--<FlexLayout JustifyContent="SpaceBetween" Margin="20,30">
                     <StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Wallet balance" TextColor="White" FontFamily="Euclid-Medium" FontSize="14" Margin="0,0,0,10"/>
@@ -29,11 +54,11 @@
                         <Label Text="Wallet ID" TextColor="White" FontFamily="Euclid-Medium" FontSize="15" HorizontalTextAlignment="End" />
                         <Label Text="0089657328" TextColor="White" FontFamily="Euclid-Medium" FontSize="15" />
                     </StackLayout>
-                </FlexLayout>
+                </FlexLayout>-->
             </Grid>
         </Frame>
 
-        <FlexLayout Grid.Row="1" Direction="Column" Margin="20,10">
+        <FlexLayout Grid.Row="2" Direction="Column" Margin="20,10">
             <StackLayout>
                 <Frame CornerRadius="0" Margin="0,0,0,-5" Padding="15">
                     <FlexLayout Direction="Column">
@@ -81,7 +106,9 @@
                       StrokeDashOffset="2"/>
 
                 <Frame CornerRadius="0" HeightRequest="70" Margin="0,-5" Padding="15">
-
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="proceed"/>
+                    </Frame.GestureRecognizers>
                     <StackLayout>
                         <FlexLayout JustifyContent="SpaceBetween">
                             <Label Text="Withdrawal" TextColor="#ff6b00" FontFamily="Euclid-Medium" FontSize="13"/>
@@ -112,7 +139,9 @@
                       StrokeDashOffset="2"/>
 
                 <Frame CornerRadius="0" HeightRequest="70" Margin="0,-5" Padding="15">
-
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="proceed"/>
+                    </Frame.GestureRecognizers>
                     <StackLayout>
                         <FlexLayout JustifyContent="SpaceBetween">
                             <Label Text="Credit" TextColor="#000000" FontFamily="Euclid-Medium" FontSize="13"/>
@@ -143,7 +172,9 @@
                       StrokeDashOffset="2"/>
 
                 <Frame CornerRadius="0" HeightRequest="70" Margin="0,-5" Padding="15">
-
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="proceed"/>
+                    </Frame.GestureRecognizers>
                     <StackLayout>
                         <FlexLayout JustifyContent="SpaceBetween">
                             <Label Text="Withdrawal" TextColor="#ff6b00" FontFamily="Euclid-Medium" FontSize="13"/>
@@ -174,7 +205,9 @@
                       StrokeDashOffset="2"/>
 
                 <Frame CornerRadius="0" HeightRequest="70" Margin="0,-5" Padding="15">
-
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="proceed"/>
+                    </Frame.GestureRecognizers>
                     <StackLayout>
                         <FlexLayout JustifyContent="SpaceBetween">
                             <Label Text="Credit" TextColor="#000000" FontFamily="Euclid-Medium" FontSize="13"/>

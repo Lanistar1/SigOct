@@ -4,6 +4,7 @@
             xmlns:Pages="clr-namespace:SigmaPOS.Views"
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
+            NavigationPage.HasNavigationBar="False"
             BarBackgroundColor="{StaticResource PrimaryColor}"
             x:Class="SigmaPOS.Views.Tabbed"
             android:TabbedPage.BarItemColor="White"
@@ -13,4 +14,26 @@
     <Pages:WalletPage Title="Wallet" IconImageSource="Wallet.png"></Pages:WalletPage>
     <Pages:ProfilePage Title="Profile" IconImageSource="profile.png"></Pages:ProfilePage>
     <Pages:More Title="More" IconImageSource="moreee.png"></Pages:More>
+
+
+    <!--<NavigationPage IconImageSource="Homes.png">
+        <x:Arguments>
+            <Pages:DashBoardPage Title="Home" />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage IconImageSource="Wallet.png">
+        <x:Arguments>
+            <Pages:WalletPage Title="Wallet"  />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage   IconImageSource="profile.png" >
+        <x:Arguments>
+            <Pages:ProfilePage Title="Profile" />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage   IconImageSource="moreee.png" >
+        <x:Arguments>
+            <Pages:More Title="More" />
+        </x:Arguments>
+    </NavigationPage>-->
 </TabbedPage>
