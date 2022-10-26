@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SigmaPOS.Views.ProfilePage">
 
+    <ScrollView>
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -10,7 +11,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Frame Grid.Row="0" Padding="0" HeightRequest="70" HasShadow="False" Margin="0,0,0,-5">
+        <Frame Grid.Row="0" Padding="0" HeightRequest="40" HasShadow="False" Margin="0,0,0,-5">
             <Label Text="Profile" FontFamily="Euclid-Medium" FontSize="18" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="#083B51"/>
         </Frame>
         
@@ -37,4 +38,5 @@
             </StackLayout>
         </StackLayout>
     </Grid>
+    </ScrollView>
 </ContentPage>

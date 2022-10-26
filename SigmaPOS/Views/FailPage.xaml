@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SigmaPOS.Views.FailPage"
              NavigationPage.HasBackButton="False" 
-             Title="            Request Status">
+             Title="                Request Status">
 
 
-    <Frame BackgroundColor="#E9F1F4" Margin="20,150,20,250" HeightRequest="110" CornerRadius="10" Padding="0">
+    <Frame BackgroundColor="#E9F1F4" Margin="20,100,20,0" VerticalOptions="StartAndExpand" CornerRadius="10" Padding="0">
         <Grid >
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -22,7 +22,25 @@
             </StackLayout>
 
             <StackLayout Grid.Row="1" Margin="20">
-                <Button Text="Try again" BackgroundColor="{StaticResource PrimaryColor}" FontFamily="Euclid-Medium" FontSize="15" TextColor="White" CornerRadius="10"/>
+                <!--<Button Text="Try again" BackgroundColor="{StaticResource PrimaryColor}" FontFamily="Euclid-Medium" FontSize="15" TextColor="White" CornerRadius="10"/>-->
+
+                <Grid Margin="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Frame BackgroundColor="#7B7B7B" Padding="0" HeightRequest="50" CornerRadius="10" Grid.Column="0">
+                        <Label Text="Print" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Euclid-Light" FontSize="15"/>
+                    </Frame>
+
+                    <Frame BackgroundColor="#083B51" Padding="0" HeightRequest="50" CornerRadius="10" Grid.Column="1">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer/>
+                        </Frame.GestureRecognizers>
+                        <Label Text="Download" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="Euclid-Light" FontSize="15"/>
+                    </Frame>
+                </Grid>
 
                 <Label HorizontalOptions="CenterAndExpand"  FontSize="16" FontFamily="Euclid-Medium" Grid.Row="2" Margin="0,15">
                     <Label.FormattedText>

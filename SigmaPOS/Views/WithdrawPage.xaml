@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:SigmaPOS.Controls"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:SigmaPOS.Controls" xmlns:local="clr-namespace:SigmaPOS.Views"
              Title="      Withdraw"
              
              x:Class="SigmaPOS.Views.WithdrawPage">
@@ -16,7 +16,50 @@
 
         <StackLayout Grid.Row="0">
             <Label Text="Secret Pin" TextColor="Black" HorizontalTextAlignment="Start" FontFamily="Euclid-Medium" FontSize="15"/>
+
             <Frame CornerRadius="10"
+                           Margin="0,2"
+                           BackgroundColor="#ececec"
+                           Padding="10,0"
+                           HeightRequest="50">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <controls:CustomEntry 
+                                    VerticalOptions="CenterAndExpand"
+                                    FontFamily="Euclid-Regular"
+                                    FontSize="14"
+                                    Keyboard="Numeric"
+                                    Grid.Column="0"
+                                    TextColor="Black"
+                                     IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger}, Path=HidePassword}"
+                                    />
+
+                    <ImageButton  Grid.Column="1"
+                                              BackgroundColor="Transparent"
+                                              Margin="0,0,10,0"
+                                              HeightRequest="15"
+                                              HorizontalOptions="End"
+                                              Source="eyecancel">
+                        <ImageButton.Triggers>
+                            <EventTrigger Event="Clicked">
+                                <local:ShowPasswordTriggerAction ShowIcon="eyeyellow"
+                                                                             HideIcon="eyecancel"
+                                                                             x:Name="ShowPasswordActualTrigger"/>
+                            </EventTrigger>
+                        </ImageButton.Triggers>
+                    </ImageButton>
+
+                </Grid>
+                
+            </Frame>
+            
+            
+            
+            <!--<Frame CornerRadius="10"
                            Margin="0,0"
                            Padding="10,0"
                            BackgroundColor="#ececec"
@@ -26,12 +69,13 @@
                                     VerticalOptions="CenterAndExpand"
                                     FontFamily="Euclid-Regular"
                                     FontSize="Small"
+                                    Keyboard="Numeric"
                                     Placeholder="Enter secret pin"
                                     Text="{Binding Email}"
                                     TextColor="Black"
                                     />
                 
-            </Frame>
+            </Frame>-->
         </StackLayout>
         
         <StackLayout Grid.Row="1" Margin="0,20,0,0">

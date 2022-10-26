@@ -5,8 +5,32 @@
              NavigationPage.BackButtonTitle="Back"
              Title="             Connect">
 
-    <Frame BackgroundColor="#E9F1F4" Margin="20,150,20,250" HeightRequest="110" CornerRadius="10" Padding="0">
-        <Grid>
+    <Frame BackgroundColor="#E9F1F4" CornerRadius="10" Padding="0" VerticalOptions="StartAndExpand" Margin="20,100,20,0">
+
+        <StackLayout>
+            <Frame BackgroundColor="White" Margin="100,40,100,30" Padding="0" HeightRequest="110" CornerRadius="10">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Tap_me"/>
+                </Frame.GestureRecognizers>
+                <StackLayout>
+                    <Image Source="Bluetooth.png" WidthRequest="30" HeightRequest="30" VerticalOptions="Center" Margin="0,40,0,0"/>
+                </StackLayout>
+            </Frame>
+
+            <StackLayout>
+                <Image Source="Loader.png" WidthRequest="40" HeightRequest="40"/>
+            </StackLayout>
+            <Label Text="Pairing with terminal" FontFamily="Euclid-Medium" FontSize="16" HorizontalTextAlignment="Center" 
+                       TextColor="{StaticResource PrimaryColor}" Margin="0,10"/>
+
+            <Label Text="Ensure bluetooth is turn on" FontFamily="Euclid-Medium" FontSize="16" HorizontalTextAlignment="Center" 
+                       TextColor="{StaticResource PrimaryColor}" Margin="0,0,0,40"/>
+        </StackLayout>
+        
+        
+        
+        
+        <!--<Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
@@ -31,7 +55,7 @@
                 <Label Text="Ensure bluetooth is turn on" FontFamily="Euclid-Medium" FontSize="16" HorizontalTextAlignment="Center" 
                        TextColor="{StaticResource PrimaryColor}" Margin="0,0"/>
             </StackLayout>
-        </Grid>
+        </Grid>-->
     </Frame>
     
 </ContentPage>

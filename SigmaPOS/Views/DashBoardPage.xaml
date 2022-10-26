@@ -19,7 +19,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Frame Grid.Row="0" HeightRequest="50" Padding="20,0" HasShadow="False">
+        <Frame Grid.Row="0" HeightRequest="50" Padding="10,0" HasShadow="False">
             <FlexLayout JustifyContent="SpaceBetween" Margin="0,10,0,0">
                 <StackLayout Orientation="Horizontal">
                     <StackLayout>
@@ -42,16 +42,16 @@
             </FlexLayout>
         </Frame>
 
-        <Frame Margin="20" BackgroundColor="{StaticResource PrimaryColor}" CornerRadius="10" Grid.Row="1" HeightRequest="180" Padding="0">
+        <Frame Margin="10,20" BackgroundColor="{StaticResource PrimaryColor}" CornerRadius="10" Grid.Row="1" HeightRequest="165" Padding="0">
             <Grid>
                 <StackLayout>
                     <Image Source="Intersecter.png" HeightRequest="120" WidthRequest="150" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" Margin="0,-12,-5,0"/>
                 </StackLayout>
 
-                <StackLayout Orientation="Horizontal" Spacing="90"  Margin="20,20">
+                <StackLayout Orientation="Horizontal" Spacing="90"  Margin="20,20,20,10">
                     <StackLayout>
                         <StackLayout Orientation="Horizontal">
-                            <Label Text="Wallet balance" TextColor="White" FontFamily="Euclid-Medium" FontSize="14" Margin="0,0,0,10"/>
+                            <Label Text="Wallet balance" TextColor="White" FontFamily="Euclid-Medium" FontSize="11" Margin="0,0,0,10"/>
                             <!--<Image Source="Eyess.png" WidthRequest="20" HeightRequest="20" Margin="10,0,0,5"/>-->
 
                             <Grid>
@@ -60,32 +60,37 @@
                             </Grid>
                         </StackLayout>
                         <Grid>
-                            <Label Text="₦ 250 000. 00" TextColor="White" FontFamily="Euclid-Medium" FontSize="20" IsVisible="{Binding ShowAmount}"/>
-                            <Label Text="- - - - - - - -" TextColor="White" FontSize="Medium" FontAttributes="Bold" IsVisible="{Binding HideAmount}"/>
+                            <Label Text="₦ 250 000. 00" TextColor="White" FontFamily="Euclid-Medium" FontSize="15" IsVisible="{Binding ShowAmount}"/>
+                            <Label Text="- - - - - - -" TextColor="White" FontSize="Medium" FontAttributes="Bold" IsVisible="{Binding HideAmount}"/>
                         </Grid>
                     </StackLayout>
                     <StackLayout Margin="0,5,0,0" HorizontalOptions="EndAndExpand">
-                        <Label Text="Wallet ID" TextColor="White" FontFamily="Euclid-Medium" FontSize="15" HorizontalTextAlignment="End" />
-                        <Label Text="0089657328" TextColor="White" FontFamily="Euclid-Medium" FontSize="15" />
+                        <Label Text="Wallet ID" TextColor="White" FontFamily="Euclid-Medium" FontSize="12" HorizontalTextAlignment="End" />
+                        <Label Text="0089657328" TextColor="White" FontFamily="Euclid-Medium" FontSize="12" />
                     </StackLayout>
                 </StackLayout>
 
-                <FlexLayout Margin="20,120,20,0" JustifyContent="SpaceBetween">
+                <FlexLayout Margin="20,110,20,0" JustifyContent="SpaceBetween">
                     <StackLayout>
                         <Label Text="Credit Today" TextColor="#B5CD06" FontFamily="Euclid-Medium" FontSize="12" Margin="0,0,0,0"/>
-                        <Label Text="₦ 120 000. 00" TextColor="White" FontFamily="Euclid-Medium" FontSize="15" />
+                        <Label Text="₦ 120 000. 00" TextColor="White" FontFamily="Euclid-Medium" FontSize="13" />
                     </StackLayout>
                     <StackLayout>
                         <Label Text="Debit Today" TextColor="#FFA600" FontFamily="Euclid-Medium" FontSize="12" Margin="0,0,0,0" HorizontalTextAlignment="End"/>
-                        <Label Text="₦ 70 000. 00" TextColor="White" FontFamily="Euclid-Medium" FontSize="15" />
+                        <Label Text="₦ 70 000. 00" TextColor="White" FontFamily="Euclid-Medium" FontSize="13" />
                     </StackLayout>
                 </FlexLayout>
             </Grid>
         </Frame>
 
-        <FlexLayout Grid.Row="2" Margin="20" JustifyContent="SpaceBetween">
-            <StackLayout>
-                <Frame WidthRequest="127" HeightRequest="60" CornerRadius="5" BackgroundColor="#FFE7D6" Margin="0,0,0,8">
+        <StackLayout Grid.Row="2" Margin="10,20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Frame HeightRequest="60" CornerRadius="5" BackgroundColor="#FFE7D6" Margin="0,0,5,5" Grid.Column="0">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                     </Frame.GestureRecognizers>
@@ -94,7 +99,7 @@
                         <Label Text="Withdraw" FontFamily="Euclid-Medium" TextColor="Black" FontSize="14" HorizontalTextAlignment="Center"/>
                     </StackLayout>
                 </Frame>
-                <Frame WidthRequest="127" HeightRequest="60" CornerRadius="5" BackgroundColor="#E9F1F4">
+                <Frame HeightRequest="60" CornerRadius="5" BackgroundColor="#E9F1F4" Grid.Column="1" Margin="5,0,0,5">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="To_Transaction"/>
                     </Frame.GestureRecognizers>
@@ -103,15 +108,21 @@
                         <Label Text="Transactions" FontFamily="Euclid-Medium" TextColor="Black" FontSize="14" HorizontalTextAlignment="Center"/>
                     </StackLayout>
                 </Frame>
-            </StackLayout>
-            <StackLayout>
-                <Frame WidthRequest="127" HeightRequest="60" CornerRadius="5" BackgroundColor="#E9F1F4" Margin="0,0,0,8">
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Frame HeightRequest="60" CornerRadius="5" BackgroundColor="#E9F1F4" Margin="0,5,5,0" Grid.Column="0">
                     <StackLayout>
                         <Image Source="Sidearrows.png" WidthRequest="40" HeightRequest="30"/>
                         <Label Text="Transfer" FontFamily="Euclid-Medium" TextColor="Black" FontSize="14" HorizontalTextAlignment="Center"/>
                     </StackLayout>
                 </Frame>
-                <Frame WidthRequest="127" HeightRequest="60" CornerRadius="5" BackgroundColor="#FFE7D6">
+                <Frame HeightRequest="60" CornerRadius="5" BackgroundColor="#FFE7D6" Grid.Column="1" Margin="5,5,0,0">
                     <Frame.GestureRecognizers>
                         <TapGestureRecognizer Tapped="Tapped_me"/>
                     </Frame.GestureRecognizers>
@@ -120,40 +131,7 @@
                         <Label Text="Metrics" FontFamily="Euclid-Medium" TextColor="Black" FontSize="14" HorizontalTextAlignment="Center"/>
                     </StackLayout>
                 </Frame>
-            </StackLayout>
-        </FlexLayout>
+            </Grid>
+        </StackLayout>
     </Grid>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <!--<StackLayout>
-        <magic:GradientView VerticalOptions="FillAndExpand">
-            <magic:GradientView.GradientSource>
-                <magic:GradientCollection>
-                    <magic:LinearGradient Angle="180">
-                        <magic:GradientStop Color="#083B51" Offset="1" />
-                        <magic:GradientStop Color="#083B51" Offset="0.6"/>
-                    </magic:LinearGradient>
-                    <magic:LinearGradient Angle="180">
-                        <magic:GradientStop Color="#083B51" Offset="0.4" />
-                        <magic:GradientStop Color="#083B5105" Offset="0" />
-                    </magic:LinearGradient>
-                </magic:GradientCollection>
-            </magic:GradientView.GradientSource>
-        </magic:GradientView>
-    </StackLayout>-->
 </ContentPage>

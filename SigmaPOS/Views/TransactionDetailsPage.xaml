@@ -36,32 +36,32 @@
               StrokeDashOffset="2"/>
 
             <StackLayout Grid.Row="2" Margin="30,20,20,30">
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
                     <Label Text="Termianl:" FontFamily="Euclid-Medium" FontSize="14" TextColor="#FF6B00"/>
                     <Label Text="0034576543" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
                     <Label Text="Transaction date:" FontFamily="Euclid-Medium" FontSize="14" TextColor="#FF6B00"/>
                     <Label Text="20 Oct 2022, 09:20:05" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
                     <Label Text="Card:" FontFamily="Euclid-Medium" FontSize="14" TextColor="#FF6B00"/>
                     <Label Text="Master -" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
                     <Label Text="536*****4523" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
                     <Label Text="Client:" FontFamily="Euclid-Medium" FontSize="14" TextColor="#FF6B00"/>
                     <Label Text="Habeeb Ability" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
                     <Label Text="TRansaction Amount:" FontFamily="Euclid-Medium" FontSize="14" TextColor="#FF6B00"/>
                     <Label Text="5100" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
                     <Label Text="Transaction Reference:" FontFamily="Euclid-Medium" FontSize="14" TextColor="#FF6B00"/>
                     <Label Text="SIG411122879" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
                     <Label Text="Transaction Status:" FontFamily="Euclid-Medium" FontSize="14" TextColor="#FF6B00"/>
                     <Label Text="Approved" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
                 </StackLayout>
