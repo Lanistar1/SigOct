@@ -26,8 +26,8 @@
                         <Image Source="Avatarimage.png" WidthRequest="30" HeightRequest="30" Margin="0,0,0,10"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Hi," FontFamily="Euclid-Medium" FontSize="14" TextColor="#083B51" Margin="0,8,0,0"/>
-                        <Label Text="Emmanuel" FontFamily="Euclid-Medium" FontSize="14" TextColor="#083B51" Margin="0,8,0,0"/>
+                        <Label Text="Hi," FontFamily="Euclid-Medium" FontSize="14" TextColor="#083B51" Margin="0,7,0,0"/>
+                        <Label Text="Emmanuel" FontFamily="Euclid-Medium" FontSize="14" TextColor="#083B51" Margin="0,7,0,0"/>
                     </StackLayout>
                 </StackLayout>
 

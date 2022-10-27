@@ -33,6 +33,7 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <StackLayout Margin="10,40,10,0" Grid.Row="0">
                         <Label Text="Username"
@@ -59,14 +60,14 @@
                                     FontFamily="Poppins-Regular"
                                     FontSize="Small"
                                     Grid.Column="1"
-                                    Text="{Binding Email}"
+                                    Text="{Binding Username}"
                                     TextColor="Black"
                                     />  
                             </Grid>
                         </Frame>
                     </StackLayout>
 
-                    <StackLayout Margin="10,20,10,0" Grid.Row="1">
+                    <StackLayout Margin="10,10,10,0" Grid.Row="1">
                         <Label Text="Password"
                             FontFamily="Euclid-Medium"
                             FontSize="15"
@@ -91,6 +92,7 @@
                                     VerticalOptions="CenterAndExpand"
                                     FontFamily="Euclid-Regular"
                                     FontSize="14"
+                                    Text="{Binding Password}"
                                     Grid.Column="1"
                                     TextColor="Black"
                                      IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger}, Path=HidePassword}"
@@ -114,7 +116,31 @@
                         </Frame>
                     </StackLayout>
 
-                    <Label HorizontalOptions="StartAndExpand" Margin="20,0,0,0" FontSize="13" FontFamily="Euclid-Light" Grid.Row="2">
+                    <StackLayout Margin="10,10,10,0" Grid.Row="2">
+                        <Label Text="Merchant ID"
+                           FontFamily="Euclid-Medium"
+                           FontSize="15"
+                           Margin="10,0,10,5"
+                           TextColor="Black"/>
+
+                        <Frame CornerRadius="10"
+                           Margin="10,0"
+                           Padding="10,0"
+                           HeightRequest="50">
+                            <Grid>
+                                
+                                <controls:CustomEntry 
+                                    VerticalOptions="CenterAndExpand"
+                                    FontFamily="Poppins-Regular"
+                                    FontSize="Small"
+                                    Text="{Binding MerchantID}"
+                                    TextColor="Black"
+                                    />
+                            </Grid>
+                        </Frame>
+                    </StackLayout>
+
+                    <Label HorizontalOptions="StartAndExpand" Margin="20,0,0,0" FontSize="13" FontFamily="Euclid-Light" Grid.Row="3">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="Forget Password? " TextColor="Black" />
@@ -128,7 +154,7 @@
                     <Button Text="Login"
                         Margin="20"
                         FontSize="15"
-                        Grid.Row="3"
+                        Grid.Row="4"
                         Padding="0,10"
                         CornerRadius="10"
                         Clicked="Click_me"

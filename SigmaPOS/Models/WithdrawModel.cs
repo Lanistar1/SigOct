@@ -4,8 +4,7 @@ using System.Text;
 
 namespace SigmaPOS.Models
 {
-    public class ChangePasswordModel
+    public class WithdrawModel
     {
-
     }
 }

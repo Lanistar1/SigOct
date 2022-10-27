@@ -30,7 +30,7 @@ namespace SigmaPOS.Views
 
         private void Click_me(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ChangePasswordPage());
+            Navigation.PushAsync(new ResetPasswordPage());
         }
     }
 }

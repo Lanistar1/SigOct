@@ -12,15 +12,14 @@ using Xamarin.Forms;
 
 namespace SigmaPOS.ViewModels
 {
-    public class LoginViewModel : BaseViewModel
+    public class ResetPasswordViewModel : BaseViewModel
     {
-        public LoginViewModel(INavigation navigation)
+        public ResetPasswordViewModel(INavigation navigation)
         {
             Navigation = navigation;
 
-            LoginCommand = new Command(async () => await LoginCommandsExecute());
+            ResetPasswordCommand = new Command(async () => await ResetPasswordCommandsExecute());
         }
-
         #region Binding Properties
         private bool isBtnEnabled = false;
 
@@ -35,7 +34,6 @@ namespace SigmaPOS.ViewModels
         }
 
         private bool isMessageVisible = false;
-
         public bool IsMessageVisible
         {
             get => isMessageVisible;
@@ -57,32 +55,18 @@ namespace SigmaPOS.ViewModels
             }
         }
 
-        private bool isBusy = false;
-
-        public bool IsBusy
+        private bool IsBusy = false;
+        public bool IsBuy
         {
-            get => isBusy;
+            get => IsBusy;
             set
             {
-                isBusy = value;
+                IsBusy = value;
                 OnPropertyChanged(nameof(IsBusy));
             }
         }
 
-        private string username;
-
-        public string Username
-        {
-            get => username;
-            set
-            {
-                username = value;
-                OnPropertyChanged(nameof(Username));
-            }
-        }
-
         private string password;
-
         public string Password
         {
             get => password;
@@ -92,75 +76,32 @@ namespace SigmaPOS.ViewModels
                 OnPropertyChanged(nameof(Password));
             }
         }
-        
-        private string merchantID;
 
-        public string MerchantID
-        {
-            get => merchantID;
-            set
-            {
-                merchantID = value;
-                OnPropertyChanged(nameof(MerchantID));
-            }
-        }
-        #endregion
-
-        #region Binding Commands
-
-        public Command LoginCommand { get; }
+        public Command ResetPasswordCommand { get; }
 
         #endregion
-        #region Functions, Methods, Events and others
-        private async Task LoginCommandsExecute()
+        private async Task ResetPasswordCommandsExecute()
         {
             try
             {
                 Console.WriteLine("something pressed");
-                if (string.IsNullOrWhiteSpace(Username))
+                if (string.IsNullOrWhiteSpace(Password))
                 {
                     IsBtnEnabled = false;
                     IsMessageVisible = true;
-                    MessageLabel = "Please enter a correct username";
-                    await Task.Delay(5000);
-                    Console.WriteLine("hgjdshfg");
+                    MessageLabel = "Please enter a correct Password";
+                    await Task.Delay(2000);
                     IsMessageVisible = false;
                     return;
                 }
-
-                if (string.IsNullOrWhiteSpace(Password))
-                {
-                    IsMessageVisible = true;
-                    MessageLabel = "Please enter a correct password";
-                    await Task.Delay(5000);
-                    IsMessageVisible = false;
-                    return;
-                }
-                
-                if (string.IsNullOrWhiteSpace(MerchantID))
-                {
-                    IsMessageVisible = true;
-                    MessageLabel = "Please enter a correct merchantID";
-                    await Task.Delay(5000);
-                    IsMessageVisible = false;
-                    return;
-                }
-
                 IsBtnEnabled = true;
                 IsBusy = true;
-                IsMessageVisible = true;
                 HttpClient client = new HttpClient();
-                LoginRequest request = new LoginRequest(Password, Username, MerchantID);
-                Console.WriteLine(request.password);
-                Console.WriteLine(request.username);
-                Console.WriteLine(request.merchantID);
+                ResetPasswordRequest request = new ResetPasswordRequest(Password);
 
                 string body = JsonConvert.SerializeObject(request);
-                Console.WriteLine(Username);
-                Console.WriteLine(Password);
-                Console.WriteLine(MerchantID);
 
-                string url = Global.LoginUrl;
+                string url = Global.ResetPasswordUrl;
                 Console.WriteLine(url);
                 StringContent content = new StringContent(body, Encoding.UTF8, "application/json");
 
@@ -172,30 +113,23 @@ namespace SigmaPOS.ViewModels
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    LoginResponse data = JsonConvert.DeserializeObject<LoginResponse>(result);
-                    Console.WriteLine(data.data.token);
-                    Helpers.Global.token = data.data.token;
-                    Helpers.Global.user_id = data.data.id;
-                    Helpers.Global.CurrentUserData = data.data;
+                    ResetPasswordModel data = JsonConvert.DeserializeObject<ResetPasswordModel>(result);
                     MessageLabel = data.message;
-                    await Task.Delay(5000);
-                    Console.WriteLine(MessageLabel);
-                    await Navigation.PushAsync(new TabbedPage());
+
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
                 {
-                    LoginResponse data = JsonConvert.DeserializeObject<LoginResponse>(result);
+                    ResetPasswordModel data = JsonConvert.DeserializeObject<ResetPasswordModel>(result);
+
                     IsMessageVisible = true;
-                    //MessageLabel = data.message;
                     MessageLabel = data.message;
-                    await Task.Delay(5000);
+                    await Task.Delay(2000);
                     IsMessageVisible = false;
                 }
                 else
                 {
-                    LoginResponse data = JsonConvert.DeserializeObject<LoginResponse>(result);
+                    ResetPasswordModel data = JsonConvert.DeserializeObject<ResetPasswordModel>(result);
                     MessageLabel = data.message;
-                    await Task.Delay(5000);
                     response.Dispose();
                 }
             }
@@ -203,15 +137,14 @@ namespace SigmaPOS.ViewModels
             {
                 Console.WriteLine(ex);
                 Console.WriteLine($" An error with {ex.Message} occured here");
-                MessageLabel = "Check your internet connection";
             }
             finally
             {
                 IsMessageVisible = false;
-                IsBtnEnabled = false;
+                //IsBtnEnabled = false;
                 IsBusy = false;
             }
         }
-        #endregion
+
     }
 }

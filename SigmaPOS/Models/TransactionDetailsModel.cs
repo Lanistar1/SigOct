@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SigmaPOS.Models
 {
-    public class LoginModel
+    public class TransactionDetailsModel
     {
 
     }

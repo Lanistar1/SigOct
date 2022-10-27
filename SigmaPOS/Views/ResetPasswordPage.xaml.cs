@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace SigmaPOS.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ChangePasswordPage : ContentPage
+    public partial class ResetPasswordPage : ContentPage
     {
-        public ChangePasswordPage()
+        public ResetPasswordPage()
         {
             InitializeComponent();
         }

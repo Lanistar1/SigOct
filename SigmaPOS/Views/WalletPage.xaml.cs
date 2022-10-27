@@ -16,7 +16,7 @@ namespace SigmaPOS.Views
         public WalletPage()
         {
             InitializeComponent();
-            BindingContext = new DashBoardViewModel(Navigation);
+            BindingContext = new WalletViewModel(Navigation);
         }
 
         private void proceed(object sender, EventArgs e)
