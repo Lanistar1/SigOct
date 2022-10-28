@@ -10,14 +10,13 @@ using Xamarin.Forms;
 
 namespace SigmaPOS.ViewModels
 {
-    class ForgetPasswordViewModel : BaseViewModel
+    public class SetNewPinViewModel : BaseViewModel
     {
-        public ForgetPasswordViewModel(INavigation navigation)
+        public SetNewPinViewModel(INavigation navigation)
         {
             Navigation = navigation;
-            ForgetPasswordCommand = new Command(async () => await ForgetPasswordCommandsExecute());
+            SetNewPinCommand = new Command(async () => await SetNewPinCommandsExecute());
         }
-
         #region Binding Properties
         private bool isBtnEnabled = false;
 
@@ -41,7 +40,6 @@ namespace SigmaPOS.ViewModels
                 OnPropertyChanged(nameof(IsMessageVisible));
             }
         }
-
         private string messageLabel;
 
         public string MessageLabel
@@ -75,10 +73,10 @@ namespace SigmaPOS.ViewModels
             }
         }
 
-        public Command ForgetPasswordCommand { get; }
+        public Command SetNewPinCommand { get; }
 
         #endregion
-        private async Task ForgetPasswordCommandsExecute()
+        private async Task SetNewPinCommandsExecute()
         {
             try
             {
@@ -99,7 +97,7 @@ namespace SigmaPOS.ViewModels
 
                 string body = JsonConvert.SerializeObject(request);
 
-                string url = Global.ForgetPasswordUrl;
+                string url = Global.SetPinUrl;
                 Console.WriteLine(url);
                 StringContent content = new StringContent(body, Encoding.UTF8, "application/json");
 
@@ -110,13 +108,13 @@ namespace SigmaPOS.ViewModels
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    ForgetPasswordResponse data = JsonConvert.DeserializeObject<ForgetPasswordResponse>(result);
+                    SetPinResponse data = JsonConvert.DeserializeObject<SetPinResponse>(result);
                     MessageLabel = data.message;
 
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
                 {
-                    ForgetPasswordResponse data = JsonConvert.DeserializeObject<ForgetPasswordResponse>(result);
+                    SetPinResponse data = JsonConvert.DeserializeObject<SetPinResponse>(result);
 
                     IsMessageVisible = true;
                     MessageLabel = data.message;
@@ -125,12 +123,12 @@ namespace SigmaPOS.ViewModels
                 }
                 else
                 {
-                    ForgetPasswordResponse data = JsonConvert.DeserializeObject<ForgetPasswordResponse>(result);
+                    SetPinResponse data = JsonConvert.DeserializeObject<SetPinResponse>(result);
                     MessageLabel = data.message;
                     response.Dispose();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex);
                 Console.WriteLine($" An error with {ex.Message} occured here");

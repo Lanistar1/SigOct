@@ -17,7 +17,6 @@ namespace SigmaPOS.ViewModels
         public ResetPasswordViewModel(INavigation navigation)
         {
             Navigation = navigation;
-
             ResetPasswordCommand = new Command(async () => await ResetPasswordCommandsExecute());
         }
         #region Binding Properties
@@ -43,6 +42,7 @@ namespace SigmaPOS.ViewModels
                 OnPropertyChanged(nameof(IsMessageVisible));
             }
         }
+
         private string messageLabel;
 
         public string MessageLabel

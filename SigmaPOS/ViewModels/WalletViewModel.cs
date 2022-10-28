@@ -89,7 +89,7 @@ namespace SigmaPOS.ViewModels
         public ICommand ButtonShowCommand { get; }
         public ICommand ButtonHideCommand { get; }
 
-        private async Task ButtonShowCommandExecute()
+        private Task ButtonShowCommandExecute()
         {
             try
             {
@@ -105,8 +105,11 @@ namespace SigmaPOS.ViewModels
             {
                 Console.WriteLine(ex);
             }
+
+            return Task.CompletedTask;
         }
-        private async Task ButtonHideCommandExecute()
+
+        private Task ButtonHideCommandExecute()
         {
             try
             {
@@ -121,6 +124,8 @@ namespace SigmaPOS.ViewModels
             {
                 Console.WriteLine(ex);
             }
+
+            return Task.CompletedTask;
         }
     }
 }

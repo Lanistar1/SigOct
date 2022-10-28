@@ -10,14 +10,13 @@ using Xamarin.Forms;
 
 namespace SigmaPOS.ViewModels
 {
-    class ForgetPasswordViewModel : BaseViewModel
+    public class ResetPinViewModel : BaseViewModel
     {
-        public ForgetPasswordViewModel(INavigation navigation)
+        public ResetPinViewModel(INavigation navigation)
         {
             Navigation = navigation;
-            ForgetPasswordCommand = new Command(async () => await ForgetPasswordCommandsExecute());
+            ResetPinCommand = new Command(async () => await ResetPinCommandsExecute());
         }
-
         #region Binding Properties
         private bool isBtnEnabled = false;
 
@@ -41,9 +40,7 @@ namespace SigmaPOS.ViewModels
                 OnPropertyChanged(nameof(IsMessageVisible));
             }
         }
-
         private string messageLabel;
-
         public string MessageLabel
         {
             get => messageLabel;
@@ -64,30 +61,50 @@ namespace SigmaPOS.ViewModels
                 OnPropertyChanged(nameof(IsBusy));
             }
         }
-        private string phoneNumber;
-        public string PhoneNumber
+        private string oldPin;
+        public string OldPin
         {
-            get => phoneNumber;
+            get => oldPin;
             set
             {
-                phoneNumber = value;
-                OnPropertyChanged(nameof(PhoneNumber));
+                oldPin = value;
+                OnPropertyChanged(nameof(OldPin));
             }
         }
 
-        public Command ForgetPasswordCommand { get; }
+        private string newPin;
+        public string NewPin
+        {
+            get => newPin;
+            set
+            {
+                newPin = value;
+                OnPropertyChanged(nameof(NewPin));
+            }
+        }
+
+        public Command ResetPinCommand { get; }
 
         #endregion
-        private async Task ForgetPasswordCommandsExecute()
+        private async Task ResetPinCommandsExecute()
         {
             try
             {
                 Console.WriteLine("something pressed");
-                if (string.IsNullOrWhiteSpace(PhoneNumber))
+                if (string.IsNullOrWhiteSpace(OldPin))
                 {
                     IsBtnEnabled = false;
                     IsMessageVisible = true;
-                    MessageLabel = "Please enter a correct Phonenumber";
+                    MessageLabel = "Please enter a correct OldPin";
+                    await Task.Delay(2000);
+                    IsMessageVisible = false;
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(NewPin))
+                {
+                    IsBtnEnabled = false;
+                    IsMessageVisible = true;
+                    MessageLabel = "Please enter your NewPin";
                     await Task.Delay(2000);
                     IsMessageVisible = false;
                     return;
@@ -95,28 +112,42 @@ namespace SigmaPOS.ViewModels
                 IsBtnEnabled = true;
                 IsBusy = true;
                 HttpClient client = new HttpClient();
-                ForgetPasswordRequest request = new ForgetPasswordRequest(PhoneNumber);
+                ResetPinRequestModel requestPayload = new ResetPinRequestModel(OldPin, NewPin);
 
-                string body = JsonConvert.SerializeObject(request);
+                string PayloadJson = JsonConvert.SerializeObject(requestPayload);
 
-                string url = Global.ForgetPasswordUrl;
+                Console.WriteLine(PayloadJson);
+
+                string url = Global.ResetPinUrl;
                 Console.WriteLine(url);
-                StringContent content = new StringContent(body, Encoding.UTF8, "application/json");
+                StringContent content = new StringContent(PayloadJson, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {Helpers.Global.token}");
 
-                HttpResponseMessage response = null;
-                response = await client.PostAsync(url, content);
+                //HttpResponseMessage response = null;
+                //response = await client.PostAsync(url, content);
+
+                var method = new HttpMethod("PATCH");
+
+                var request = new HttpRequestMessage(method, url)
+                {
+                    Content = content
+                };
+
+                var response = await client.SendAsync(request);
+                Console.WriteLine(response);
+
                 string result = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(result);
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    ForgetPasswordResponse data = JsonConvert.DeserializeObject<ForgetPasswordResponse>(result);
+                    ResetPinResponseModel data = JsonConvert.DeserializeObject<ResetPinResponseModel>(result);
                     MessageLabel = data.message;
 
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
                 {
-                    ForgetPasswordResponse data = JsonConvert.DeserializeObject<ForgetPasswordResponse>(result);
+                    ResetPinResponseModel data = JsonConvert.DeserializeObject<ResetPinResponseModel>(result);
 
                     IsMessageVisible = true;
                     MessageLabel = data.message;
@@ -125,12 +156,12 @@ namespace SigmaPOS.ViewModels
                 }
                 else
                 {
-                    ForgetPasswordResponse data = JsonConvert.DeserializeObject<ForgetPasswordResponse>(result);
+                    ResetPinResponseModel data = JsonConvert.DeserializeObject<ResetPinResponseModel>(result);
                     MessageLabel = data.message;
                     response.Dispose();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex);
                 Console.WriteLine($" An error with {ex.Message} occured here");
