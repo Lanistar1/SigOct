@@ -106,7 +106,7 @@ namespace SigmaPOS.ViewModels
             {
                 HttpClient client = new HttpClient();
 
-                string url = Global.ProfileUrl;
+                string url = Global.TerminalUrl;
 
                 Console.WriteLine(url);
 

@@ -147,7 +147,7 @@
                             </FormattedString>
                         </Label.FormattedText>
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer/>
+                            <TapGestureRecognizer Tapped="T0_forgetpassword"/>
                         </Label.GestureRecognizers>
                     </Label>
 

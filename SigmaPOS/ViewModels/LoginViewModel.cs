@@ -177,6 +177,7 @@ namespace SigmaPOS.ViewModels
                     Helpers.Global.token = data.data.token;
                     Helpers.Global.user_id = data.data.id;
                     Helpers.Global.CurrentUserData = data.data;
+                    Helpers.Global.FirstName = data.data.firstName;
                     MessageLabel = data.message;
                     await Task.Delay(5000);
                     Console.WriteLine(MessageLabel);

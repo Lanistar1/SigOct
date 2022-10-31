@@ -75,9 +75,9 @@ namespace SigmaPOS.ViewModels
 
             Task _task = ProfileExecute();
 
-            ProfileCommand = new Command(async () => await ProfileExecute());
+            //ProfileCommand = new Command(async () => await ProfileExecute());
         }
-        public Command ProfileCommand { get; }
+        //public Command ProfileCommand { get; }
 
         public async Task ProfileExecute()
         {
@@ -104,13 +104,13 @@ namespace SigmaPOS.ViewModels
                 Console.WriteLine(result);
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    var data = JsonConvert.DeserializeObject<ProfileData>(result);
+                    var data = JsonConvert.DeserializeObject<ProfileModel>(result);
                     Console.WriteLine(data);
-                    FirstName = data.firstName;
-                    LastName = data.lastName;
-                    Email = data.email;
-                    PhoneNumber = data.phoneNumber;
-                    Profile = data;
+                    FirstName = data.data.firstName;
+                    LastName = data.data.lastName;
+                    Email = data.data.email;
+                    PhoneNumber = data.data.phoneNumber;
+                    Profile = data.data;
                     Console.WriteLine("ffdjhhdh");
                 }
                 else

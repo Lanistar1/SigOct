@@ -42,7 +42,7 @@
             </FlexLayout>
         </Frame>
 
-        <Frame Margin="10,20" BackgroundColor="{StaticResource PrimaryColor}" CornerRadius="10" Grid.Row="1" HeightRequest="165" Padding="0">
+        <Frame Margin="10,20" BackgroundColor="{StaticResource PrimaryColor}" CornerRadius="10" Grid.Row="1" HeightRequest="175" Padding="0">
             <Grid>
                 <StackLayout>
                     <Image Source="Intersecter.png" HeightRequest="120" WidthRequest="150" HorizontalOptions="EndAndExpand" VerticalOptions="StartAndExpand" Margin="0,-12,-5,0"/>

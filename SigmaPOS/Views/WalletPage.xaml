@@ -89,7 +89,7 @@
             <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Frame CornerRadius="0" HeightRequest="70" Margin="15,0,15,-20" Padding="15">
+                            <Frame CornerRadius="0" HeightRequest="70" Margin="15,-5,15,-10" Padding="15">
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="proceed"/>
                                 </Frame.GestureRecognizers>

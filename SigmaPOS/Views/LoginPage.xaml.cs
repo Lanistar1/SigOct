@@ -32,5 +32,10 @@ namespace SigmaPOS.Views
         {
             Navigation.PushAsync(new ResetPasswordPage());
         }
+
+        private void T0_forgetpassword(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ForgetPasswordPage());
+        }
     }
 }

@@ -18,11 +18,6 @@ namespace SigmaPOS.Models
         public string type { get; set; }
     }
 
-
-
-
-
-
     public class Cool
     {
         public double test { get; set; }
@@ -47,6 +42,8 @@ namespace SigmaPOS.Models
         public string holderId { get; set; }
         public string holderName { get; set; }
         public Metadata metadata { get; set; }
+        public wallet wallet { get; set; }
+        public bool isSelected { get; set; }
     }
 
     public class Metadata

@@ -1,5 +1,4 @@
-﻿using SigmaPOS.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace SigmaPOS.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProfilePage : ContentPage
+    public partial class ForgetPasswordPage : ContentPage
     {
-        public ProfilePage()
+        public ForgetPasswordPage()
         {
             InitializeComponent();
-            BindingContext = new ProfileViewModel(Navigation);
         }
     }
 }
