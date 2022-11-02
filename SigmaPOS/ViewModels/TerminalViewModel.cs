@@ -96,7 +96,7 @@ namespace SigmaPOS.ViewModels
 
             Task _task = TerminalExecute();
 
-            TerminalCommand = new Command(async () => await TerminalExecute());
+            //TerminalCommand = new Command(async () => await TerminalExecute());
         }
         public Command TerminalCommand { get; }
 

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using SigmaPOS.Helpers;
 using SigmaPOS.Models;
+using SigmaPOS.Views;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -181,7 +182,7 @@ namespace SigmaPOS.ViewModels
                     MessageLabel = data.message;
                     await Task.Delay(5000);
                     Console.WriteLine(MessageLabel);
-                    await Navigation.PushAsync(new TabbedPage());
+                    await Navigation.PushAsync(new ResetPasswordPage());
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
                 {

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using SigmaPOS.Helpers;
 using SigmaPOS.Models;
+using SigmaPOS.Views;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -115,6 +116,8 @@ namespace SigmaPOS.ViewModels
                 {
                     ResetPasswordModel data = JsonConvert.DeserializeObject<ResetPasswordModel>(result);
                     MessageLabel = data.message;
+                    Navigation.PushModalAsync(new NavigationPage(new Tabbed()));
+                    Console.WriteLine("dfnkdjhkjfgh");
 
                 }
                 else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)

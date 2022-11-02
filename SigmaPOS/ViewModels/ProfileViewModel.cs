@@ -75,9 +75,9 @@ namespace SigmaPOS.ViewModels
 
             Task _task = ProfileExecute();
 
-            //ProfileCommand = new Command(async () => await ProfileExecute());
+            ProfileCommand = new Command(async () => await ProfileExecute());
         }
-        //public Command ProfileCommand { get; }
+        public Command ProfileCommand { get; }
 
         public async Task ProfileExecute()
         {

@@ -157,7 +157,7 @@
                         Grid.Row="4"
                         Padding="0,10"
                         CornerRadius="10"
-                        Clicked="Click_me"
+                        Command="{Binding LoginCommand}"
                         BackgroundColor="{StaticResource PrimaryColor}"
                         FontFamily="Euclid-Light"
                         TextColor="White"/>

@@ -33,6 +33,8 @@
                                     FontFamily="Euclid-Regular"
                                     FontSize="14"
                                     Keyboard="Numeric"
+                                    Placeholder="Enter secret pin"
+                                    Text="{Binding Pin}"
                                     Grid.Column="0"
                                     TextColor="Black"
                                      IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger}, Path=HidePassword}"
@@ -57,25 +59,6 @@
                 
             </Frame>
             
-            
-            
-            <!--<Frame CornerRadius="10"
-                           Margin="0,0"
-                           Padding="10,0"
-                           BackgroundColor="#ececec"
-                           HeightRequest="50">
-                
-                    <controls:CustomEntry 
-                                    VerticalOptions="CenterAndExpand"
-                                    FontFamily="Euclid-Regular"
-                                    FontSize="Small"
-                                    Keyboard="Numeric"
-                                    Placeholder="Enter secret pin"
-                                    Text="{Binding Email}"
-                                    TextColor="Black"
-                                    />
-                
-            </Frame>-->
         </StackLayout>
         
         <StackLayout Grid.Row="1" Margin="0,20,0,0">
@@ -92,7 +75,13 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Picker Grid.Column="0"></Picker>
+                    <Picker  x:Name="transTypePicker" SelectedIndexChanged="transTypePicker_SelectedIndexChanged"
+                                         Title="Select Transaction type" TextColor="Gray" Grid.Column="0">
+                        <Picker.Items>
+                            <x:String>Savings</x:String>
+                            <x:String>current</x:String>
+                        </Picker.Items>
+                    </Picker>
 
                     <StackLayout Grid.Column="1">
                         <Image Source="downarrows.png" WidthRequest="10" HeightRequest="10" Margin="0,25,0,0"/>
@@ -115,17 +104,22 @@
                                     FontFamily="Euclid-Regular"
                                     FontSize="Small"
                                     Keyboard="Numeric"
+                                    Text="{Binding Amount}"
                                     Placeholder="Enter amount"
                                     TextColor="Black"
                                     />
             </Frame>
         </StackLayout>
 
-        <Frame BackgroundColor="{StaticResource PrimaryColor}" Grid.Row="3" HeightRequest="50" Padding="0" CornerRadius="10" Margin="0,40">
+        <Button BackgroundColor="{StaticResource PrimaryColor}" Text="Continue" TextColor="White" CornerRadius="10" Margin="0,40"
+                Grid.Row="3" Command="{Binding InitiateTransactionCommand}" CommandParameter="{Binding .}"/>
+
+        <!--<Frame BackgroundColor="{StaticResource PrimaryColor}" Grid.Row="3" HeightRequest="50" Padding="0" CornerRadius="10" Margin="0,40">
             <Frame.GestureRecognizers>
-                <TapGestureRecognizer Tapped="proceed"/>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding InitiateTransactionCommand}" CommandParameter="{Binding .}"/>
+                --><!--<TapGestureRecognizer Tapped="proceed"/>--><!--
             </Frame.GestureRecognizers>
             <Label Text="Continue" HorizontalTextAlignment="Center" TextColor="White" FontFamily="Euclid-Medium" FontSize="15" VerticalTextAlignment="Center"/>
-        </Frame>
+        </Frame>-->
     </Grid>
 </ContentPage>
