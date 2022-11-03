@@ -36,7 +36,7 @@
                         <Image Source="blue.png" WidthRequest="20" HeightRequest="20" Margin="0,7,0,0"/>
                     </StackLayout>
                     <StackLayout>
-                        <Image Source="notification.png" WidthRequest="20" HeightRequest="20" Margin="0,7,0,0"/>
+                        <ImageButton Clicked="Image_click" Source="notification.png" WidthRequest="20" HeightRequest="20" Margin="0,7,0,0"/>
                     </StackLayout>
                 </StackLayout>
             </FlexLayout>

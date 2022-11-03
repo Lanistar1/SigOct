@@ -80,9 +80,13 @@ namespace SigmaPOS.ViewModels
         {
             Navigation = navigation;
 
-            InitiateTransactionCommand = new Command(async () => await GetInitiateTransactionExecute());
-        }
+            Task _task = GetCompleteTransactionExecute();
 
+            InitiateTransactionCommand = new Command(async () => await GetInitiateTransactionExecute());
+
+            CompleteTransactionCommand = new Command(async () => await GetCompleteTransactionExecute());
+
+        }
 
 
         public Command InitiateTransactionCommand { get; }
@@ -165,5 +169,69 @@ namespace SigmaPOS.ViewModels
                 Console.WriteLine(ex);
             }
         }
+
+        public Command CompleteTransactionCommand { get; }
+        public async Task GetCompleteTransactionExecute()
+        {
+            try
+            {
+                UserCardDetails userCardDetails = new UserCardDetails() { cardExpiry = "2023-09-09", cardPan = "2056****098", cardType = "VISA" };
+
+                InterswitchDetails interswitchDetails = new InterswitchDetails() { interswitchRef = "003925492013", interswitchResponseCode = "51", interswitchResponseMessage = "Insufficient funds" };
+
+                CompleteTransactionModel requestPayload = new CompleteTransactionModel() { cardDetails = userCardDetails, interswitchDetails = interswitchDetails, status = "SUCCESSFUL", transactionId = "1628245681523661" };
+
+                HttpClient client = new HttpClient();
+
+                string PayloadJson = JsonConvert.SerializeObject(requestPayload);
+
+                Console.WriteLine(PayloadJson);
+
+                string url = Global.CompleteTransactionUrl;
+                Console.WriteLine(url);
+                StringContent content = new StringContent(PayloadJson, Encoding.UTF8, "application/json");
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {Helpers.Global.token}");
+
+                var method = new HttpMethod("PATCH");
+
+                var request = new HttpRequestMessage(method, url)
+                {
+                    Content = content
+                };
+
+                var response = await client.SendAsync(request);
+
+                Console.WriteLine(response);
+
+                string result = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(result);
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    var data = JsonConvert.DeserializeObject<CompleteTransactionModel>(result);
+                    MessageLabel = " Transaction completed";
+                    Console.WriteLine(MessageLabel);
+                    Console.WriteLine("gubkfuwgyliwerli");
+                }
+                else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                {
+                    IsMessageVisible = true;
+                    MessageLabel = "insert your card properly";
+                    await Task.Delay(2000);
+                    IsMessageVisible = false;
+                }
+                else
+                {
+                    MessageLabel = "Something went wrong. Please try again later.";
+                    IsMessageVisible = false;
+                    response.Dispose();
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
     }
 }

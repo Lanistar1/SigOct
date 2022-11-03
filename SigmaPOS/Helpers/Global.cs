@@ -23,6 +23,7 @@ namespace SigmaPOS.Helpers
         public static string TerminalUrl => $"{BaseUrl}/api/v1/agent/terminals/businesses/jst2443636001KHTw/:terminalSerialNumber";
         public static string WalletUrl => $"{BaseUrl}/api/v1/agent/businesses/jst2443636001KHTw/my-wallet";
         public static string InitiateTransactionUrl => $"{BaseUrl}/api/v1/agent/businesses/jst2443636001KHTw/transactions";
+        public static string CompleteTransactionUrl => $"{BaseUrl}/api/v1/agent/businesses/jst2443636001KHTw/transactions";
         public static string NotificationUrl => $"{BaseUrl}/api/v1/agent/businesses/jst2443636001KHTw/my-notifications?from_date=2022-05-01 &to_date=2022-10-30&is_read=FALSE";
         public static string ReadNotificationUrl => $"{BaseUrl}/api/v1/agent/businesses/jst2443636001KHTw/my-notifications/:id/read";
         public static string MetricUrl => $"{BaseUrl}/api/v1/agent/businesses/jst2443636001KHTw/transactions/metrics?from_date=2022-05-01 &to_date=2022-10-30&status=SUCCESSFUL&type=CREDIT";
