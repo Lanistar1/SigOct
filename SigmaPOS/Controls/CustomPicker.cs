@@ -5,7 +5,10 @@ using Xamarin.Forms;
 
 namespace SigmaPOS.Controls
 {
-    public class CustomPicker : Picker
+    public class BorderlessPicker : Picker
     {
+        public BorderlessPicker() : base()
+        {
+        }
     }
 }

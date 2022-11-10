@@ -75,14 +75,13 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Picker  x:Name="transTypePicker" SelectedIndexChanged="transTypePicker_SelectedIndexChanged"
-                                         Title="Select Transaction type" TextColor="Gray" Grid.Column="0">
+                    <controls:BorderlessPicker  x:Name="transTypePicker" SelectedIndexChanged="transTypePicker_SelectedIndexChanged"
+                                         Title="Select Transaction type" TextColor="Gray" Grid.Column="0" VerticalOptions="EndAndExpand">
                         <Picker.Items>
                             <x:String>Savings</x:String>
-                            <x:String>current</x:String>
+                            <x:String>Current</x:String>
                         </Picker.Items>
-                    </Picker>
-
+                    </controls:BorderlessPicker>
                     <StackLayout Grid.Column="1">
                         <Image Source="downarrows.png" WidthRequest="10" HeightRequest="10" Margin="0,25,0,0"/>
                     </StackLayout>

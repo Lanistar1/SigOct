@@ -11,16 +11,14 @@ using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-[assembly: ExportRenderer(typeof(BorderlessPicker), typeof(BorderlessPickerRenderer))]
-
+[assembly: ExportRenderer(typeof(BorderlessPicker), typeof(BordlessPickerRenderer))]
 namespace SigmaPOS.Droid.Controls
 {
-    public class BorderlessPickerRenderer : PickerRenderer
+    public class BordlessPickerRenderer : PickerRenderer
     {
-        public BorderlessPickerRenderer(Context context) : base(context)
+        public BordlessPickerRenderer(Context context) : base(context)
         {
         }
-
         protected override void OnElementChanged(ElementChangedEventArgs<Picker> e)
         {
             base.OnElementChanged(e);

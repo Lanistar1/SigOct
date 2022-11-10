@@ -49,28 +49,29 @@
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
                                 <Label Text="Transaction date:" FontFamily="Euclid-Medium" FontSize="14" TextColor="#FF6B00"/>
-                                <Label Text="20 Oct 2022, 09:20:05" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
+                                <Label Text="{Binding date}" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
+                                <Label Text="{Binding time}" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
                                 <Label Text="Card:" FontFamily="Euclid-Medium" FontSize="14" TextColor="#FF6B00"/>
-                                <Label Text="Master -" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
-                                <Label Text="536*****4523" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
+                                <Label Text="{Binding card}" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
+                                <Label Text="{Binding details}" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
                                 <Label Text="Client:" FontFamily="Euclid-Medium" FontSize="14" TextColor="#FF6B00"/>
-                                <Label Text="Habeeb Ability" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
+                                <Label Text="{Binding name}" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
                                 <Label Text="TRansaction Amount:" FontFamily="Euclid-Medium" FontSize="14" TextColor="#FF6B00"/>
-                                <Label Text="5100" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
+                                <Label Text="{Binding amount}" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
                                 <Label Text="Transaction Reference:" FontFamily="Euclid-Medium" FontSize="14" TextColor="#FF6B00"/>
-                                <Label Text="SIG411122879" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
+                                <Label Text="{Binding customerReference}" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" Margin="0,0,0,5">
                                 <Label Text="Transaction Status:" FontFamily="Euclid-Medium" FontSize="14" TextColor="#FF6B00"/>
-                                <Label Text="Approved" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
+                                <Label Text="{Binding status}" FontFamily="Euclid-Medium" FontSize="14" TextColor="{StaticResource PrimaryColor}"/>
                             </StackLayout>
                             <Frame BackgroundColor="{StaticResource PrimaryColor}" Grid.Row="3" HeightRequest="50" Padding="0" CornerRadius="10" Margin="0,40">
                                 <Label Text="Download" HorizontalTextAlignment="Center" TextColor="White" FontFamily="Euclid-Medium" FontSize="15" VerticalTextAlignment="Center"/>

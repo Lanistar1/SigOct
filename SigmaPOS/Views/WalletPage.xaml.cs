@@ -19,9 +19,9 @@ namespace SigmaPOS.Views
             BindingContext = new WalletViewModel(Navigation);
         }
 
-        private void proceed(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new TransactionDetailsPage());
-        }
+        //private void proceed(object sender, EventArgs e)
+        //{
+        //    Navigation.PushAsync(new TransactionDetailsPage());
+        //}
     }
 }

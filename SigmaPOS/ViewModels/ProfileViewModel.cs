@@ -93,7 +93,6 @@ namespace SigmaPOS.ViewModels
 
                 HttpResponseMessage response;
 
-
                 var test = Global.token;
                 Console.WriteLine(test);
 

@@ -43,7 +43,7 @@
             </Grid>
         </Frame>
 
-        <Frame Grid.Row="1" HeightRequest="150" Padding="0" Margin="15,0,15,0" WidthRequest="50">
+        <Frame Grid.Row="1" HeightRequest="110" Padding="0" Margin="15,0,15,0" WidthRequest="50">
             <StackLayout>
                 <Frame Padding="5,-5" HeightRequest="40" WidthRequest="60" Margin="10,10,220,0" CornerRadius="5" BackgroundColor="#F5F5F5">
                     <Grid>
@@ -64,11 +64,11 @@
                     </Grid>
                 </Frame>
 
-                <FlexLayout Margin="10,20" JustifyContent="SpaceBetween">
+                <FlexLayout Margin="10,10" JustifyContent="SpaceBetween">
                     <StackLayout Orientation="Horizontal">
-                        <Frame HeightRequest="50" WidthRequest="50" CornerRadius="5" BackgroundColor="#FFE7D6" Padding="0" >
+                        <Frame HeightRequest="50" WidthRequest="50" CornerRadius="5" BackgroundColor="#FFE7D6" Padding="-5" >
                             <StackLayout>
-                                <Image Source="ups.png" WidthRequest="15" HeightRequest="15"  Margin="0,20,0,0"/>
+                                <Image Source="ups.png" WidthRequest="15" HeightRequest="15"  Margin="0,18,0,0"/>
                             </StackLayout>
                         </Frame>
 
@@ -79,9 +79,9 @@
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal">
-                        <Frame HeightRequest="30" WidthRequest="50" CornerRadius="5" BackgroundColor="LightGray" Padding="0,-5" >
+                        <Frame HeightRequest="30" WidthRequest="50" CornerRadius="5" BackgroundColor="LightGray" Padding="-5" >
                             <StackLayout>
-                                <Image Source="downs.png" WidthRequest="15" HeightRequest="15"  Margin="0,20,0,0"/>
+                                <Image Source="downs.png" WidthRequest="15" HeightRequest="15"  Margin="0,18,0,0"/>
                             </StackLayout>
                         </Frame>
 

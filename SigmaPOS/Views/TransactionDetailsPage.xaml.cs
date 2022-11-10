@@ -15,10 +15,10 @@ namespace SigmaPOS.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TransactionDetailsPage : ContentPage
     {
-        public TransactionDetailsPage()
+        public TransactionDetailsPage(ObservableCollection<WalletData> selectedItems)
         {
             InitializeComponent();
-            //BindingContext = new TransactionDetailsViewModel(Navigation, selectedItems);
+            BindingContext = new TransactionDetailsViewModel(Navigation, selectedItems);
         }
         //public TransactionDetailsPage(ObservableCollection<WalletData> selectedItems)
         //{

@@ -80,11 +80,11 @@ namespace SigmaPOS.ViewModels
         {
             Navigation = navigation;
 
-            Task _task = GetCompleteTransactionExecute();
+            //Task _task = GetCompleteTransactionExecute();
 
             InitiateTransactionCommand = new Command(async () => await GetInitiateTransactionExecute());
 
-            CompleteTransactionCommand = new Command(async () => await GetCompleteTransactionExecute());
+            //CompleteTransactionCommand = new Command(async () => await GetCompleteTransactionExecute());
 
         }
 
@@ -227,7 +227,7 @@ namespace SigmaPOS.ViewModels
                     response.Dispose();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }

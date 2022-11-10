@@ -4,7 +4,7 @@
              x:Class="SigmaPOS.Views.ProfilePage">
 
     <ScrollView>
-    <Grid Margin="20">
+    <Grid Margin="20,10">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
