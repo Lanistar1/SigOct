@@ -175,10 +175,11 @@ namespace SigmaPOS.ViewModels
                 {
                     LoginResponse data = JsonConvert.DeserializeObject<LoginResponse>(result);
                     Console.WriteLine(data.data.token);
-                    Helpers.Global.token = data.data.token;
+                    Helpers.Global.token = data.data.token; 
                     Helpers.Global.user_id = data.data.id;
                     Helpers.Global.CurrentUserData = data.data;
                     Helpers.Global.FirstName = data.data.firstName;
+                    Helpers.Global.Business_ID = data.data.business.id;
                     MessageLabel = data.message;
                     await Task.Delay(5000);
                     Console.WriteLine(MessageLabel);

@@ -42,7 +42,7 @@ namespace SigmaPOS.Models
         public string customerId { get; set; }
     }
 
-    public class Business
+    public class AgentBusiness
     {
         public string id { get; set; }
         public string walletId { get; set; }
@@ -98,7 +98,7 @@ namespace SigmaPOS.Models
         public string email { get; set; }
         public string phoneNumber { get; set; }
         public string status { get; set; }
-        public Business business { get; set; }
+        public AgentBusiness business { get; set; }
     }
 
     public class PerformedBy

@@ -16,7 +16,7 @@ namespace SigmaPOS.Views
         public MetricPage()
         {
             InitializeComponent();
-            BindingContext = new DashBoardViewModel(Navigation);
+            BindingContext = new MetricViewModel(Navigation);
         }
     }
 }

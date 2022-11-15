@@ -22,18 +22,8 @@ namespace SigmaPOS.Views
 
         //private void click_me(object sender, EventArgs e)
         //{
-        //    Navigation.PushAsync(new Tabbed());
-
-
-
-        //    //application.current.MainPage = new NavigationPage(new Tabbed());
-
+        //    Navigation.PushAsync(new ResetPasswordPage());
         //}
-
-        private void Click_me(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new ResetPasswordPage());
-        }
 
         private void T0_forgetpassword(object sender, EventArgs e)
         {

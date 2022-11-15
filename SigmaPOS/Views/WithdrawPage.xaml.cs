@@ -1,4 +1,5 @@
-﻿using SigmaPOS.Helpers;
+﻿using SigmaPOS.Controls;
+using SigmaPOS.Helpers;
 using SigmaPOS.ViewModels;
 using System;
 using System.Collections.Generic;

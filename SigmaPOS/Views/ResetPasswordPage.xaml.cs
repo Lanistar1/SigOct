@@ -16,14 +16,12 @@ namespace SigmaPOS.Views
         public ResetPasswordPage()
         {
             InitializeComponent();
-            //BindingContext = new ResetPasswordViewModel(Navigation);
+            BindingContext = new ResetPasswordViewModel(Navigation);
         }
 
-        private void click(object sender, EventArgs e)
-        {
-            //navigation.pushasync(new tabbed());
-            Navigation.PushModalAsync(new NavigationPage(new Tabbed()));
-            //Navigation.PushModalAsync(new Tabbed());
-        }
+        //private void click(object sender, EventArgs e)
+        //{
+        //    Navigation.PushModalAsync(new NavigationPage(new Tabbed()));
+        //}
     }
 }

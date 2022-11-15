@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace SigmaPOS.ViewModels
@@ -14,17 +15,48 @@ namespace SigmaPOS.ViewModels
     public class MetricViewModel : BaseViewModel
     {
 
-        private TransactionMetric metric;
-        public TransactionMetric Metric
+        private bool buttonShow = true;
+        public bool ButtonShow
         {
-            get => metric;
+            get => buttonShow;
             set
             {
-                metric = value;
-                OnPropertyChanged(nameof(Metric));
+                buttonShow = value;
+                OnPropertyChanged(nameof(ButtonShow));
             }
         }
 
+        private bool buttonHide = false;
+        public bool ButtonHide
+        {
+            get => buttonHide;
+            set
+            {
+                buttonHide = value;
+                OnPropertyChanged(nameof(ButtonHide));
+            }
+        }
+
+        private bool showAmount = true;
+        public bool ShowAmount
+        {
+            get => showAmount;
+            set
+            {
+                showAmount = value;
+                OnPropertyChanged(nameof(ShowAmount));
+            }
+        }
+        private bool hideAmount = false;
+        public bool HideAmount
+        {
+            get => hideAmount;
+            set
+            {
+                hideAmount = value;
+                OnPropertyChanged(nameof(HideAmount));
+            }
+        }
 
         private string walletId;
         public string WalletId
@@ -48,6 +80,40 @@ namespace SigmaPOS.ViewModels
             }
         }
 
+        private TransactionMetric metric;
+        public TransactionMetric Metric
+        {
+            get => metric;
+            set
+            {
+                metric = value;
+                OnPropertyChanged(nameof(Metric));
+            }
+        }
+
+
+        private int credit;
+        public int Credit
+        {
+            get => credit;
+            set
+            {
+                credit = value;
+                OnPropertyChanged(nameof(Credit));
+            }
+        }
+
+        private int debit;
+        public int Debit
+        {
+            get => debit;
+            set
+            {
+                debit = value;
+                OnPropertyChanged(nameof(Debit));
+            }
+        }
+
         public MetricViewModel(INavigation navigation)
         {
             Navigation = navigation;
@@ -55,6 +121,43 @@ namespace SigmaPOS.ViewModels
             Task _task = GetMetricExecute();
             Task _tasks = GetWalletExecute();
 
+            ButtonShowCommand = new Command(async () => await ButtonShowCommandExecute());
+            ButtonHideCommand = new Command(async () => await ButtonHideCommandExecute());
+
+        }
+
+        public ICommand ButtonShowCommand { get; }
+        public ICommand ButtonHideCommand { get; }
+
+        private async Task ButtonShowCommandExecute()
+        {
+            try
+            {
+                ShowAmount = false;
+                HideAmount = true;
+                ButtonHide = true;
+                ButtonShow = false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+        private async Task ButtonHideCommandExecute()
+        {
+            try
+            {
+                ShowAmount = true;
+                HideAmount = false;
+                ButtonHide = false;
+                ButtonShow = true;
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
 
